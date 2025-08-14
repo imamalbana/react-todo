@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -8,56 +7,76 @@ function App() {
 
   const addTodo = () => {
     if (text.trim() === "") return;
-    setTodos([...todos, text]);
-    console.log("Todo added:", text);
+    setTodos([...todos, { text, completed: false }]);
     setText("");
   };
 
-  const deleteTodo = (index) => {
-    // filter membuat array baru, hanya simpan todo yang index-nya BUKAN yang mau dihapus
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos); // update state
-    console.log("Todo deleted at index:", index), newTodos;
+  const toggleTodo = (index) => {
+    setTodos((prev) =>
+      prev.map((todo, i) =>
+        i === index ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
   };
+
+  const deleteTodo = (index) => {
+    setTodos((prev) => prev.filter((_, i) => i !== index));
+  };
+
   return (
-    <>
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-        <h1 className="text-3xl font-bold mb-6">Todo App</h1>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6 justify-center">
+      <h1 className="text-3xl font-bold mb-6">Todo App</h1>
 
-        {/* Input */}
-        <div className="flex gap-2 w-full max-w-md">
-          <input
-            className="flex-1 border rounded px-3 py-2 outline-none"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Masukkan todo..."
-          />
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            onClick={addTodo}
-          >
-            Tambah
-          </button>
-        </div>
-
-        <ul className="w-full max-w-md mt-6">
-          {todos.map((todo, index) => (
-            <li
-              key={index}
-              className="flex items-center justify-between bg-white p-4 my-2 rounded shadow"
-            >
-              <span className="text-black">{todo}</span>
-              <button
-                className="bg-red-500 p-2 text-white rounded-sm"
-                onClick={() => deleteTodo(index)}
-              >
-                Hapus
-              </button>
-            </li>
-          ))}
-        </ul>
+      {/* Input */}
+      <div className="flex gap-2 w-full max-w-md">
+        <input
+          className="flex-1 border border-gray-300 rounded px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Masukkan todo..."
+        />
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+          onClick={addTodo}
+        >
+          Tambah
+        </button>
       </div>
-    </>
+
+      <ul className="w-full max-w-md mt-6 space-y-3">
+        {todos.map((todo, index) => (
+          <li
+            key={index}
+            className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition"
+          >
+            <div className="flex items-center gap-3 flex-1">
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => toggleTodo(index)}
+                className="w-5 h-5 accent-blue-500 cursor-pointer"
+              />
+              <span
+                className={`text-lg ${
+                  todo.completed
+                    ? "line-through text-gray-500"
+                    : "text-gray-800"
+                }`}
+              >
+                {todo.text}
+              </span>
+            </div>
+
+            <button
+              className="bg-red-500 px-3 py-1 text-white rounded hover:bg-red-600 transition"
+              onClick={() => deleteTodo(index)}
+            >
+              Hapus
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
