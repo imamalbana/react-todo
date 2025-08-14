@@ -1,13 +1,4 @@
-<img width="246" height="409" alt="image" src="https://github.com/user-attachments/assets/c88f7b49-0c21-4e69-b446-1c2041ac360a" /># A Simple React Todo Application
-
-[![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://react.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://react-todo-eta-five.vercel.app/)
-
-A lightweight and responsive Todo application built with **React** and **Tailwind CSS**, featuring persistent storage using the browser's `localStorage`.
-
----
+### A simple ToDo App using React JS
 
 ## 🚀 Live Demo
 🔗 **[Open Application](https://react-todo-eta-five.vercel.app/)**
