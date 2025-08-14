@@ -1,12 +1,27 @@
-# React + Vite
+# React Todo App — README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi Todo sederhana berbasis React dengan **persistensi `localStorage`**. Ringkas, cepat, dan mudah di-deploy.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Demo
+Production: [https://react-todo-eta-five.vercel.app/](https://react-todo-eta-five.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Fitur
+- Tambah, centang/selesaikan, dan hapus todo
+- Data tersimpan otomatis di **`localStorage`** (persisten antar refresh)
+- UI ringan dengan Tailwind CSS
+- Aksesibilitas dasar (checkbox, fokus input)
+
+---
+
+## 🧩 Teknologi
+- **React** (hooks: `useState`, `useEffect`)
+- **Tailwind CSS** (kelas utilitas di komponen)
+- **localStorage** untuk penyimpanan sisi-klien
+
+---
+
+## 📁 Struktur Proyek (minimal)
