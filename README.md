@@ -35,8 +35,8 @@ npm install
 # or
 yarn install
 ```
-3. **Run the development server**
+3. **Run the server**
 ```bash
-npm run build
+npm run dev
 ```
 
