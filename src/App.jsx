@@ -13,6 +13,12 @@ function App() {
     setText("");
   };
 
+  const deleteTodo = (index) => {
+    // filter membuat array baru, hanya simpan todo yang index-nya BUKAN yang mau dihapus
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos); // update state
+    console.log("Todo deleted at index:", index), newTodos;
+  };
   return (
     <>
       <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
@@ -41,7 +47,10 @@ function App() {
               className="flex items-center justify-between bg-white p-4 my-2 rounded shadow"
             >
               <span className="text-black">{todo}</span>
-              <button className="bg-red-500 p-2 text-white rounded-sm">
+              <button
+                className="bg-red-500 p-2 text-white rounded-sm"
+                onClick={() => deleteTodo(index)}
+              >
                 Hapus
               </button>
             </li>
