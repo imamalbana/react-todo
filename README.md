@@ -1,4 +1,4 @@
-# React Todo Application
+<img width="246" height="409" alt="image" src="https://github.com/user-attachments/assets/c88f7b49-0c21-4e69-b446-1c2041ac360a" /># A Simple React Todo Application
 
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://react.dev/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
@@ -11,19 +11,6 @@ A lightweight and responsive Todo application built with **React** and **Tailwin
 
 ## 🚀 Live Demo
 🔗 **[Open Application](https://react-todo-eta-five.vercel.app/)**
-
----
-
-## 📸 Preview
-
-### Desktop View
-![Desktop Screenshot](./docs/screenshot-desktop.png)
-
-### Mobile View
-![Mobile Screenshot](./docs/screenshot-mobile.png)
-
-### Demo GIF
-![App Demo](./docs/todo-demo.gif)
 
 ---
 
@@ -44,4 +31,21 @@ A lightweight and responsive Todo application built with **React** and **Tailwin
 
 ---
 
-## 📂 Project Structure
+##  Installation 
+
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd <project-directory>
+```
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+```
+3. **Run the development server**
+```bash
+npm run build
+```
+
